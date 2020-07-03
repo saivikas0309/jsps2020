@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Javascript Programming Spring 2020</title>
-    <style>
-      #wrapper {
-        border: solid 0.5em blue;
-        width: 80%;
-        padding: 2em;
-        margin: 1em auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>Javascript Programming Spring 2020</h1>
-      <p>
-        Welcome to JSPS2020
-      </p>
-      <h2>Task 1</h2>
-      <ul>
-        <li>Fork this repo</li>
-        <li>
-          Add a new page - use your conestoga id as the page name e.g.
-          lnaqvi.html
-        </li>
-        <li>
-          Your page should have your name as the title and h1, you can also use
-          css to style your page
-        </li>
-        <li>
-          Use document.write() to add a paragraph under your name introducing
-          yourself - add information like your hometown, education background,
-          experience, hobbies and interests.
-        </li>
-        <li>
-          Push the new page to your forked repo and create a pull request.
-        </li>
-      </ul>
-    </div>
-  </body>
+<html lang="en">
+    <head>
+        <title>JavaScript Homework</title>
+        <style>
+            body{
+                font-family: Apple Chancery, cursive, sans-serif;
+                color: #610101;
+                font-size: 20px;
+                font-weight: 600;
+                background-size: 100%;
+                width: auto;
+            }
+            #wrapper{
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: #F5F5F5;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            h1 {
+                text-align: center;
+                text-decoration-line: underline;
+            }
+            strong {
+                text-decoration-line: underline;
+            }
+       </style>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>Mahesh Chhayani</h1>
+            </header>
+            <nav></nav>
+            <main>
+                <script>
+                    document.write("<strong>Hometown</strong> : Rajkot,Gujrat,India.<br>");
+                    document.write("<strong>Education</strong> : Computer Engineering.<br>");
+                    document.write("<strong>Experience</strong> : I have completed my bachelor in 2019 and I don't have work experience yet.<br>");
+                    document.writeln("<strong>Hobbies</strong> : Watch Movies,Tv shows,Computer games and Explore internet. <br><br><hr>");
+                    document.writeln("I have completed my engineering in May 2019 from Gujrat Technologycal University(GTU). I haven't joind any company yet because I want to study more about website development so that I can get a good job in web development field.");
+                </script>
+            </main>
+            <footer></footer>
+        </div>
+    </body>
 </html>
