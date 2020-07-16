@@ -11,27 +11,53 @@
 
             body{
                 font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                margin: 60px;
+                margin: 10px 60px 10px 60px;
                 font-size: 22px;
-                padding: 80px;
+                padding: 20px;
                 border: 5px solid #494848;
-		box-shadow: 5px 5px 5px #000;
+		        box-shadow: 5px 5px 5px #000;
             }
 
             h1{
                 font-size: 48px;
-                margin-bottom: 60px;
+                margin-bottom: 30px;
                 text-align: center;
             }
-
+            img {
+                max-width: 90%;
+                height: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
         </style>
     </head>
     <body>
         <h1>Dhruv Moradiya</h1>
-       
-            <script>
-                document.write("<p>My name is Dhruv Moradiya. I am from Surat, India. I have completed my bechalors in Computer Science & Engineering from Gujarat Technological University in the year of 2019. I was doing my job as project trainee in .net MVC before joining this course. My hobbies are: Travelling, Food and playing out-door games. My areas of interests are: playing video games in free time, trying to learn new animation softwares and surffing new animations on internet.</p>");
-            </script>
+        <div>
+            <img class="slides" src="images/img1.jpg" alt="Games">
+            <img class="slides" src="images/img2.jpg" alt="Travelling">
+            <img class="slides" src="images/img3.jpg" alt="out-door games">
+            <img class="slides" src="images/img4.jpg" alt="Animation">
+            <img class="slides" src="images/img5.jpg" alt="Games">
+        </div>
         
+        <script>
+            document.write("<p>My name is Dhruv Moradiya. I am from Surat, India. I have completed my bechalors in Computer Science & Engineering from Gujarat Technological University in the year of 2019. I was doing my job as project trainee in .net MVC before joining this course. My hobbies are: Travelling, Food and playing out-door games. My areas of interests are: playing video games in free time, trying to learn new animation softwares and surffing new animations on internet.</p>");
+            
+            var myIndex = 0;
+            var slideshow = function() {
+                var s = document.getElementsByClassName("slides");
+                for (var i = 0; i < s.length; i++) {
+                    s[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > s.length) {
+                    myIndex = 1;
+                }    
+                s[myIndex-1].style.display = "block";  
+                setTimeout(slideshow, 1000);
+            }
+            slideshow();
+        </script>
     </body>
 </html>
