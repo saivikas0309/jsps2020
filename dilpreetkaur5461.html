@@ -1,29 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Dilpreet kaur</title>
-    <style>
-    
-      #wrapper {
-           color: aliceblue;
-    background-color: #a51e01;
-    border: solid 0.5em black;
-    width: 40%;
-    padding: 2em;
-    margin: 1em auto;
-      }
-        h1{
-            text-align: center;
-        }
-    </style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>Dilpreet kaur</h1>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+                
+            }
+            body{
+                background-color: black;
+                font-family:sans-serif;
+            }
+            .wrapper{
+                border: 2px solid #fff;
+                width: 600px;
+                height: 600px;
+                position: relative;
+                left: 28em;
+                top: 3em;
+                box-shadow: 4px 4px 4px #8d8a8a;
+                background-color:#970e0e;
+            }
+            p{
+                margin-top: 0px;
+            }
+            ul{
+                display: none;
+            }
+            h1{
+                color: #fff;
+                text-align: center;
+                text-decoration: none;
+                font-size: 2.5em;
+            
+            }
+            #image{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                position: relative;
+                width: 400px;
+                height: 400px;
+                left: 6.3em;
+                top: 2em;
+            }
+            #caption{
+                position: relative;
+                text-align: center;
+                top: 1em;
+                color:#fff;
+            }
+           
+        </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                     
         <script>
-            document.write("I am Dilpreet kaur hale from Punjab, India. I have done my bechulars in Computer science and engineering and have one year experience as a web and graphic designer. I love to play with colors and like to do dance in my free time. I want to be a professional web designer in near future and to be a part of reputed IT Company.");
+            var $= function(id){
+                return document.getElementById(id);
+            }
+            
+            window.onload=function(){
+                var galNode = $("gallery");
+                var captionNode = $("caption");
+                var imageNode = $("image");
+                 
+                var links = galNode.getElementsByTagName("a");
+                var imageCache = [];
+                for(var i = 0 ; i < links.length; i++){
+                    var linkNode = links[i];
+                    var image =new Image();
+                    
+                    
+                     image.src = linkNode.getAttribute("href");
+                     image.title = linkNode.getAttribute("title");
+                     imageCache[imageCache.length] = image;
+                }
+                     var imageCounter = 0 ;
+                     var Timer = setInterval(
+                         function(){
+                       
+                         imageCounter = (imageCounter + 1) % imageCache.length;
+                         image = imageCache[imageCounter];
+                         imageNode.src = image.src;
+                         captionNode.firstChild.nodeValue = image.title;
+                    },5000)
+                    
+                } 
+           
         </script>
-      
-      </div> 
-  </body>
+    </head>
+    <body>
+       <main>
+           <div class="wrapper">
+                <h1>Slide Show</h1>
+                 <ul id="gallery">
+                    <li><a href="images_dilpreet/image1.jpeg" title="Cute Baby"></a></li>
+                    <li><a href="images_dilpreet/image2.jpg" title="White Rose"></a></li>
+                    <li><a href="images_dilpreet/image3.jpeg" title="Baby Doll"></a></li>
+                    <li><a href="images_dilpreet/image4.jpg" title="Yellow Flower"></a></li>
+                    <li><a href="images_dilpreet/image5.jpeg" title="Red Rose"></a></li>
+               </ul>
+               <p><img src="images_dilpreet/image1.jpeg" alt="cute baby" id="image" ></p>
+               <h2 id="caption">Cute Baby</h2>
+           </div>
+          
+    </main>
+    </body>
 </html>
