@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Divya Vedant</title>
+        
+        <style>
+            *{
+                margin: auto;
+                padding: auto;
+            }
+
+            body
+            {
+                font-family: montserrat, sans-serif;
+                margin: 60px;
+                font-size: 20px;
+                padding: 30px;
+                border: 2px solid black;
+            }
+
+            h1{
+                font-size: 48px;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            img
+            {
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Divya Vedant</h1>
+       
+       
+           <script>
+                document.write("Hello everyone, My name is Divya Vedant and i am from India. I have done my bachlors in computer application, and had one year of IT field experience as associate software engineer. Apart from that during this pandemic i was offerd to work video surveillance agent and to monitor sites of USA and CANADA so i'm currently working in non-IT sector. Well i would say that working in IT feild it always amaze you and you are taking part in fast-moving industry.I like to travelle and looking forward to be in canada and would love to explore, and i'm a lazy person but i do complete my task before deadline. Below are some pictures that i haved clicked while travelling. Stay Safe Thank you.<br><br>");
+                var i = 0;
+                var images = []; //starting point
+                var time= 1000;
+                
+                //Image List
+                images[0] = 'DVedant75717_Images/gallery1.jpeg';
+                images[1] = 'DVedant75717_Images/gallery2.jpeg';
+                images[2] = 'DVedant75717_Images/gallery3.jpeg';
+                images[3] = 'DVedant75717_Images/gallery4.jpeg';
+                images[4] = 'DVedant75717_Images/gallery5.jpeg';
+                
+                //change image 
+                function changeImg(){
+                    document.slide.src= images[i];
+                    
+                    if (i<images.length - 1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                    }
+                    
+                    setTimeout("changeImg()", time);
+                }
+                window.onload = changeImg;
+                
+                
+            </script>
+        
+         <img name="slide" width="900" height="600">
+        
+    </body>
+</html>
