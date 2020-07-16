@@ -1,37 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Onkar Singh Kalsi</title>
-    <style>
-      #wrapper {
-        border: 2px solid #eee;
-        width: 40%;
-        padding: 2em;
-        margin: 1em auto;
-        color: #393e46;
-        background-color: #f4f4f4;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 20px;
-        box-shadow: 2px 2px 8px grey;
+<head>
+  <title>Onkar Singh Kalsi</title>
+  <style>
+      body{
+          background-color: black;
+          margin:0;
+          padding: 0;
       }
-      #wrapper h1 {
-        text-align: center;
-        color:#cf7500;
-      }
-      span {
-        font-style: italic;
-      }
-    </style>
-    
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>Onkar Singh Kalsi</h1>
-    <script>
+    #wrapper {
+      border: 2px solid #eee;
+      width: 40%;
+      padding: 2em;
+      color: #393e46;
+      background-color: #f4f4f4;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      box-shadow: 2px 2px 8px grey;
+      position: absolute;
+      z-index: -1;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      opacity: 0.95;
+    }
+    #wrapper h1 {
+      text-align: center;
+      color:#cf7500;
+    }
+    span {
+      font-style: italic;
+    }
+    /* ----------- */
+    #slideShow{
+      position: absolute;
+      z-index: -2;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    #toggle{
+        position: absolute;
+        top:93%;
+        left: 50%;
+        transform: translate(-50%);
+        padding:7px 15px;
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+    }
+  </style>
+  
+</head>
+<body>
+  <div id="slideShow"></div>
+  <div id="wrapper">
+    <h1>Onkar Singh Kalsi</h1>      
+      <script>
       document.write('Hey, I am <span>Onkar Singh Kalsi</span>. I belong to Punjab, India. I did my <span>Bachelor \
-      of Computer Application</span> in 2019. I like to learn new things related to programming. In my free time.\
+      of Computer Application</span> in 2019. I like to learn new things related to programming. In my free time,\
       I like to play games, watch movies and internet series.');
-    </script>
-    </div>
-  </body>
+      </script>
+  </div>
+  
+  <input type="button" name="Start" id="toggle" value="Pause">
+  <script>
+      //   SlideShow coding.-------------
+      var $ = (id) => document.getElementById(id);
+      var count = 0, flag=1;
+
+      setInterval(() => {
+          if(flag==1){
+              (count<5)?count++:count=1;
+              $('slideShow').innerHTML ='<img src="images_okalsi6818/image ('+count+').jpg" >';
+          }  
+      },1000);
+
+      // Button for start/pause
+      $('toggle').onclick = () => {
+          flag?flag=0:flag=1;  
+          $('toggle').value = flag?'Pause':'Play';  
+      }
+  </script>
+</body>
 </html>
