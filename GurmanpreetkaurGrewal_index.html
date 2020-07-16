@@ -1,38 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">	
-    <title>Git Repository</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            margin: 2em;
-        }
-        .intro{
-            width: 50%;
-            height: 50%;
-            padding-top: 5em;
-            margin:auto;
-        }
-        .intro p{
-            border: border: 4px solid #000;
-            box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: justify;
-            padding: 2em;
-        }
-    </style>
-</head>
-<body>
-    <main>
-        <div class="intro">
-            <h1>Gurmanpreet Kaur Grewal</h1>
-            <p>
-                I am Gurmanpreet Kaur Grewal and I hail from Punjab state of India. I have done M.tech in Computer Science and Engineering from Punjab Agricultural University. I am working as a senior research fellow at Punjab Agricultural University and there I got a chance to work on web application using MVC framework CodeIgniter. Developing web applications certainly intrigues me, the reason I chose this course and I want to be confident enough in coding part. In free time, I like reading novels of genre fiction with a cup of coffee since I am a caffeine person and I have finished The Zahir by Paulo Coelho lately. Moreover, I am a fitness freak and nowadays I am working on inversions and abs.<br> Thank You !
-            </p>
-        </div>
-        
-    </main>
-</body>
+<!doctype html>
+<!--WIREFRAME of WEBSITE-->
+<html>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            div{
+                border: 2px solid blue;
+                width: 600px;
+                height: 600px;
+                position: relative;
+                left: 28em;
+                top: 3em;
+                box-shadow: 4px 4px #000000;
+            }
+            ul{
+                display: none;
+            }
+            h1{
+                color: darkblue;
+                text-align: center;
+                text-decoration: underline;
+            }
+            #image{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                position: relative;
+                width: 400px;
+                height: 400px;
+                left: 6.3em;
+                top: 2em;
+            }
+            #caption{
+                position: relative;
+                text-align: center;
+                top: 1em;
+            }
+           
+        </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                     
+        <script>
+            var $= function(id){
+                return document.getElementById(id);
+            }
+            
+            window.onload=function(){
+                var listNode = $("image_list");
+                var captionNode = $("caption");
+                var imageNode = $("image");
+                 
+                var links = listNode.getElementsByTagName("a");
+                var imageCache = [];
+                for(var i = 0 ; i < links.length; i++){
+                    var linkNode = links[i];
+                    var image =new Image();
+                    
+                    
+                     image.src = linkNode.getAttribute("href");
+                     image.title = linkNode.getAttribute("title");
+                     imageCache[imageCache.length] = image;
+                }
+                     var imageCounter = 0 ;
+                     var Timer = setInterval(
+                         function(){
+                       
+                         imageCounter = (imageCounter + 1) % imageCache.length;
+                         image = imageCache[imageCounter];
+                         imageNode.src = image.src;
+                         captionNode.firstChild.nodeValue = image.title;
+                    }
+                                             ,1000)
+                    
+                } 
+           
+        </script>
+    </head>
+    <body>
+       <main>
+           <div class="container">
+                <h1>Slide Show</h1>
+                 <ul id="image_list">
+                     <li><a href="Gurman8335960_images/img-1.jpg" title="Basic Crunch"></a></li>
+                     <li><a href="Gurman8335960_images/img-2.jpg" title="Headstand"></a></li>
+                      <li><a href="Gurman8335960_images/img-3.jpg" title="Cold Brewed Coffee"></a></li>
+                      <li><a href="Gurman8335960_images/img-4.jpg" title="Reading"></a></li>
+                      <li><a href="Gurman8335960_images/img-5.jpg" title="Leisure reading"></a></li>
+               </ul>
+               <p><img src="Gurman8335960_images/img-1.jpg" alt="Basic Crunch" id="image" ></p>
+               <h2 id="caption">Basic Crunch</h2>
+           </div>
+          
+           
+        </main>
+    </body>
 </html>
