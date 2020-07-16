@@ -8,14 +8,13 @@
                 border: 4px solid black;
                 width: 50%;
                 padding: 20px;
-                margin-top: 200px;
-                margin-left: 300px;
+                margin-left: 310px;
                 color: black;
                 text-align: center;
                 background-color: gainsboro;
                 font-family: 'Lucida Sans', 'Lucida Sans Unicode', sans-serif;
                 font-size: 20px;
-                box-shadow: 2px 2px 8px red;
+                box-shadow: 2px 2px 8px blue;
               }
             #wrapper h1 {
                 text-align: center;
@@ -24,15 +23,45 @@
             span {
                 font-style: italic;
               }
+        #slider{
+            text-align: center;
+            margin: 10px;
+        }
     </style>
-    
+    <script>
+        window.onload = slideShow;
+        
+        var imageNo = 0;
+        function slideShow(){
+            var images = [];
+            for (var i = 0; i < 5; i++) {
+                images[i] = "Dchopra6390_images/Dchopra6390_image" + (i+1) + ".JPG";
+            }
+            document.slideimg.src = images[imageNo];
+            if(imageNo < images.length-1){
+                imageNo++;
+            }else{
+                imageNo = 0;
+            }
+            
+            setTimeout("slideShow()",1000);
+        }
+        
+      </script>
+        
   </head>
   <body>
-    <div id="wrapper">
+      <div id="slider">
+    <img name="slideimg" width="600" height="350">
+      </div>
+          <div id="wrapper">
       <h1>Deepak Chopra</h1>
-    <script>
+    
+       <script>    
       document.write('Hey everyone, My name is Deepak Chopra. I am from Ludhiana, Punjab in India. I have completed a Bachelor Degree in Computer Application from PCTE Group of Institutes, Ludhiana. I live with my parents and a dog. My Hobbies are swimming & playing snooker and I love to explore new places while travelling.');
     </script>
     </div>
+    
+   
   </body>
 </html>
