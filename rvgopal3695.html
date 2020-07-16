@@ -18,7 +18,7 @@
         #wrapper {
             background-image: linear-gradient(0deg,
                     rgba(0, 0, 0, 0.9),
-                    rgba(0, 0, 0, 0.1)), url(https://res.cloudinary.com/rajith/image/upload/v1594210277/home_tg2l0h.jpg);
+                    rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/rajith/image/upload/v1594210277/home_tg2l0h.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -32,7 +32,7 @@
         }
 
         h1 {
-            font-size: 4em;
+            font-size: 3em;
         }
 
         h2 {
@@ -41,9 +41,29 @@
 
         p {
             font-size: 1.5em;
+            margin-bottom: 1em
         }
-
+        
     </style>
+    <script>
+        window.onload = function() {
+            var images = [];
+            for (var i = 0; i < 5; i++) {
+                images[i] = "rajith-images/image" + (i + 1) + ".jpg";
+            }
+
+            var i;
+            function slide() {
+                if (i < images.length - 1) {
+                    i = i+1;
+                } else {
+                    i = 0;
+                }
+                    document.getElementById("image-slide").src = images[i];
+            }
+             setInterval(slide, 2000);
+        }
+    </script>
 
 </head>
 
@@ -53,10 +73,8 @@
         <h2>Hi I'm,</h2>
         <h1>Rajith V Gopal</h1>
         <script>
-            document.write("<p>from Bangalore, India, <br> I did my Bachelors in Information science and technology, Bangalore.<br> I worked as Software Engineer for the past 4 years. I then decided to study more in this field and here Iam..<br> I'm passionate about fitness, I love travelling...</p>") ;
-
+            document.write("<p>from Bangalore, India, <br> I did my Bachelors in Information science and technology, Bangalore.<br> I worked as Software Engineer for the past 4 years. I then decided to study more in this field and here Iam..<br> I'm passionate about fitness, I love travelling...</p>");
         </script>
+        <div class="image-div"><img src="" id="image-slide" width="500"></div>
     </div>
-</body>
-
-</html>
+</body></html>
