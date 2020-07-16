@@ -3,23 +3,63 @@
   <head>
     <title>Ajini Maria John</title>
     <style>
-        
+        h1{
+            text-align: center;
+        }
       #wrapper {
         border: solid 0.5em Green;
-        width: 80%;
-          color: Blue;
-          font-weight: 75%;
+        width: 70%;
+          color: black;
+          font-weight: 90%;
         padding: 2em;
         margin: 1em auto;
       }
+        #content{
+            padding-left: 150px;
+            width:80%;
+        }
+        img{
+            padding-top: 50px;
+           padding-left: 150px;
+            display: flex;
+            justify-content:flex-end;
+        }
     </style>
   </head>
   <body>
    <div id="wrapper">
-    <h1>Ajini Maria john</h1>
+    <h1>Ajini Maria John</h1>
+       <div id="content">
       <script>
           document.write("Hi Everyone, My name is Ajini Maria John. I am from Kerala, India. I completed my B.Tech in IT and I worked as HMI developer in Quest Global, India.I like long walks and long drives through the woods. I like to explore new places and tries enjoy the beauty of the nature. My hobbies are playing badminton and listening musics.");
+          
+           var i = 0;
+                var img = []; 
+                var time= 1000;
+                
+                
+                img[0] = 'ajohn_Images/img1.jpg';
+                img[1] = 'ajohn_Images/img2.jpg';
+                img[2] = 'ajohn_Images/img3.jpg';
+               
+                
+                
+                function slideshow(){
+                    document.image.src= img[i];
+                    
+                    if (i<img.length - 1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                    }
+                    
+                    setTimeout("slideshow()", time);
+                }
+                window.onload = slideshow;
         </script>
+           </div>
+       <img name="image" width="900" height="600">
     </div>
   </body>
 </html>
