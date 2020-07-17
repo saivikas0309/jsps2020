@@ -21,17 +21,32 @@
             }
             h1{
                 font-size: 400%;
-            }            
+            } 
         </style>        
+        <script>
+            var num = 1;
+            var counter=function(){
+                document.getElementById("picture").src="dguanaImg/img"+num+".jpg";
+                num++;
+                if(num>5){
+                    num = 1;
+                }
+            }
+            window.onload=function(){
+                document.getElementById("par").innerHTML='<p>I am a Systems Engineer, Colombian, with experience in Cloud Computing, Interested in learning everyday more, I am a traveler, I love music and cats :)</p>';    
+                var t=setInterval(counter, 1000);
+            }
+        </script>
     </head>
     <body>
         <header>
             <h1>Daniel Guana</h1>            
         </header>
         <main>
-            <script>
-                document.write('<p>I am a Systems Engineer, Colombian, with experience in Cloud Computing, Interested in learning everyday more, I am a Music and Cats Lover :)</p>');
-            </script>
+            <div id="par"></div>
+            <div>
+                <img id="picture" width="100%" src="dguanaImg/img1.jpg">
+            </div>
         </main>
     </body>
 </html>
